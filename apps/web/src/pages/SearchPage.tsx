@@ -26,9 +26,7 @@ export function SearchPage() {
     <main className="mx-auto grid max-w-6xl gap-4 px-4 py-6 md:grid-cols-[240px_1fr] md:px-6">
       <aside className="h-fit rounded-md border border-zinc-200 bg-white p-4 text-sm">
         <h2 className="font-medium text-zinc-950">过滤器</h2>
-        <p className="mt-2 text-zinc-600">
-          初版搜索覆盖教师和课程名称，评论全文搜索后续通过索引方案增强。
-        </p>
+        <p className="mt-2 text-zinc-600">初版搜索覆盖教师和课程名称</p>
       </aside>
       <section>
         <form onSubmit={submit} className="flex gap-2">

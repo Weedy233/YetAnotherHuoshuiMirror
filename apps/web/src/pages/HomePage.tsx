@@ -26,12 +26,9 @@ export function HomePage() {
               <Badge>D1 snapshot</Badge>
             </div>
             <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-zinc-950 md:text-5xl">
-              高校教师与课程评价的只读镜像站
+              Yet Another Huoshui Mirror
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-600 md:text-base">
-              采用 GitHub Repository 风格的信息台布局，优先提供稳定搜索、教师详情、课程详情与标准
-              OpenAPI。
-            </p>
+
             <form onSubmit={submit} className="mt-6 flex max-w-2xl gap-2">
               <Input
                 aria-label="搜索教师或课程"
@@ -41,7 +38,6 @@ export function HomePage() {
               />
               <Button type="submit">
                 <Search className="mr-2 size-4" />
-                搜索
               </Button>
             </form>
           </div>
@@ -83,24 +79,6 @@ export function HomePage() {
             </a>
           </nav>
         </aside>
-        <div className="grid gap-4 md:grid-cols-2">
-          <InfoCard
-            title="稳定 API 契约"
-            description="后端由独立 Worker 提供，网页端和第三方服务都通过同一套 OpenAPI 调用。"
-          />
-          <InfoCard
-            title="高峰削峰"
-            description="静态页面走 Pages，匿名 GET API 使用缓存，D1 查询保持分页和索引命中。"
-          />
-          <InfoCard
-            title="前端可替换"
-            description="React 仅消费 API client，后续调整 shadcn 组件和视觉风格不影响查询逻辑。"
-          />
-          <InfoCard
-            title="只读镜像"
-            description="评价数据来自快照导入，默认不开放写入，避免高峰期写入预算和滥用风险。"
-          />
-        </div>
       </section>
     </main>
   );
@@ -117,14 +95,5 @@ function Metric({ icon, label, value }: { icon: ReactNode; label: string; value?
         {value?.toLocaleString() ?? "—"}
       </dd>
     </div>
-  );
-}
-
-function InfoCard({ title, description }: { title: string; description: string }) {
-  return (
-    <Card className="p-4">
-      <h3 className="text-sm font-medium text-zinc-950">{title}</h3>
-      <p className="mt-2 text-sm leading-6 text-zinc-600">{description}</p>
-    </Card>
   );
 }

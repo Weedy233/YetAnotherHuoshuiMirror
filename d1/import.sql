@@ -1,5 +1,4 @@
 PRAGMA foreign_keys=OFF;
-BEGIN TRANSACTION;
 CREATE TABLE courses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL UNIQUE
@@ -21819,5 +21818,4 @@ INSERT INTO "teachers" VALUES(15923,'辻佳代子');
 DELETE FROM "sqlite_sequence";
 INSERT INTO "sqlite_sequence" VALUES('teachers',15928);
 INSERT INTO "sqlite_sequence" VALUES('courses',15928);
-COMMIT;
 PRAGMA foreign_keys=ON;

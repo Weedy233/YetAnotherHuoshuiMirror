@@ -3,5 +3,7 @@ apps/web/dist
 .wrangler
 .env
 .env.*
+!apps/api/.env.example
+apps/api/wrangler.generated.json
 .DS_Store
 coverage

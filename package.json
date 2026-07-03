@@ -7,8 +7,10 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:api": "bun --cwd apps/api run dev",
-    "dev:web": "bun --cwd apps/web run dev",
+    "dev:api": "bun run --cwd apps/api dev",
+    "dev:api:remote": "bun run --cwd apps/api dev:remote",
+    "dev:api:local": "bun run --cwd apps/api dev:local",
+    "dev:web": "cd apps/web && bun run dev",
     "build": "bun run --filter '*' build",
     "check": "bun run typecheck && bun run lint",
     "typecheck": "bun run --filter '*' typecheck",
@@ -16,7 +18,7 @@
     "format": "biome format --write .",
     "test": "vitest run --coverage",
     "test:watch": "vitest",
-    "deploy:api": "bunx wrangler deploy --config apps/api/wrangler.jsonc",
+    "deploy:api": "bun run --cwd apps/api deploy",
     "deploy:web": "bun run --cwd apps/web build && bunx wrangler pages deploy apps/web/dist --project-name huoshui-mirror-web",
     "deploy": "bun run deploy:api && bun run deploy:web"
   },
