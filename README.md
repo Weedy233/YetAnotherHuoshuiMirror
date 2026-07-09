@@ -32,6 +32,15 @@ bunx wrangler pages project create huoshui-mirror-web --production-branch main
 bun run deploy
 ```
 
+### 前端环境变量
+
+前端构建不会内置默认线上地址，需要手动指定 API 来源：
+
+```bash
+cp apps/web/.env.example apps/web/.env
+# 填写 VITE_API_BASE_URL
+```
+
 ### GitHub Actions
 
 Repository Secrets：
@@ -47,6 +56,7 @@ Repository Variables：
 ```text
 CF_D1_DATABASE_NAME=huoshui-mirror
 CF_PAGES_PROJECT_NAME=huoshui-mirror-web
+VITE_API_BASE_URL=<your-worker-api-origin>
 ```
 
 推送到 `main`，或手动运行 `Deploy Cloudflare mirror`。

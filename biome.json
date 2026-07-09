@@ -1,7 +1,15 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.3/schema.json",
   "files": {
-    "includes": ["**", "!**/.wrangler", "!d1/import.sql"]
+    "includes": [
+      "**",
+      "!**/.wrangler",
+      "!d1/import.sql",
+      "!coverage",
+      "!apps/web/dist",
+      "!**/.vscode",
+      "!**/dist"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -19,6 +27,11 @@
     "formatter": {
       "quoteStyle": "double",
       "semicolons": "always"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   }
 }

@@ -20,10 +20,11 @@
     "test:watch": "vitest",
     "deploy:api": "bun run --cwd apps/api deploy",
     "deploy:web": "bun run --cwd apps/web build && bunx wrangler pages deploy apps/web/dist --project-name huoshui-mirror-web",
-    "deploy": "bun run deploy:api && bun run deploy:web"
+    "deploy": "bun run deploy:api && bun run deploy:web",
+    "dev:api:miniflare": "bun run --cwd apps/api dev:miniflare"
   },
   "devDependencies": {
-    "@biomejs/biome": "latest",
+    "@biomejs/biome": "^2.5.3",
     "@cloudflare/workers-types": "4.20260702.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
@@ -32,5 +33,8 @@
     "jsdom": "29.1.1",
     "typescript": "latest",
     "vitest": "4.1.9"
+  },
+  "dependencies": {
+    "@types/node": "^26.1.1"
   }
 }
